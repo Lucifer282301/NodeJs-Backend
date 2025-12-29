@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-backend",
+  "version": "1.0.0",
+  "description": "Gained hands on experience building backend applications using Node.js and Express.js, developing RESTful APIs with MongoDB and Mongoose. Implemented authentication, file uploads, sorting, pagination, real time features with Socket.IO, and explored GraphQL, deployment strategies, and TypeScript for scalable applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucifer282301/NodeJs-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucifer282301/NodeJs-Backend/issues"
+  },
+  "homepage": "https://github.com/Lucifer282301/NodeJs-Backend#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  }
+}
