@@ -19,7 +19,7 @@ const BookSchema = new mongoose.Schema(
       min: [1000, "Published year should not be before 1000"],
       max: [new Date().getFullYear(), "Published year cannot be in the future"],
     },
-    genre: {
+    type: {
       type: String,
       enum: [
         "fiction",
