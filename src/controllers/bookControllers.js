@@ -2,8 +2,20 @@ const Book = require("../models/bookModel");
 
 const getAllBooks = async (req, res) => {
   try {
-    
-  }catch (e) {
+    const allBooks = await Book.find({});
+    if (allBooks.length > 0) {
+      return res.status(200).json({
+        success: true,
+        message: "List of Books fetched successfully!",
+        data: allBooks,
+      });
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: "No books found in the database.",
+      });
+    }
+  } catch (e) {
     console.log(e);
     return res.status(500).json({
       success: false,
