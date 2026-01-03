@@ -65,7 +65,34 @@ const addNewBook = async (req, res) => {
     });
   }
 };
-const updateBookById = async (req, res) => {};
+const updateBookById = async (req, res) => {
+  try {
+    const updatedBookFormData = req.body;
+    const getCurrentBookID = req.params.id;
+    const updatedBook = await Book.findByIdAndUpdate(
+      getCurrentBookID,
+      updatedBookFormData,
+      { new: true }
+    );
+    if (!updatedBook) {
+      return res.status(404).json({
+        success: false,
+        message: "Book not found with the provided ID.",
+      });
+    }
+    return res.status(200).json({
+      success: true,
+      message: "Book updated successfully!",
+      data: updatedBook,
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({
+      success: false,
+      message: "Unable to update the book. Please try again later.",
+    });
+  }
+};
 const deleteBookById = async (req, res) => {
   try {
     const getCurrentBookID = req.params.id;
